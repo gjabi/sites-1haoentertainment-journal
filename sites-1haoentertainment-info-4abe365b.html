@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壹号娱乐 · 资料索引与信息手册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            color: #2c2b28;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .page {
+            background: #fcfbf7;
+            border-radius: 28px;
+            padding: 2.4rem 2rem 3rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid #ece7da;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            border-left: 6px solid #b7a88c;
+            padding-left: 1rem;
+            margin-bottom: 0.6rem;
+            color: #2a2824;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #6e6a5f;
+            margin-bottom: 2rem;
+            border-bottom: 1px dashed #d8d0be;
+            padding-bottom: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .subhead span {
+            font-size: 0.9rem;
+            background: #eee9de;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            color: #4f4a3e;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 450;
+            margin: 2.2rem 0 0.8rem 0;
+            color: #3e3b34;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: "◆";
+            font-size: 0.8rem;
+            color: #b7a88c;
+            margin-right: 0.2rem;
+        }
+
+        .grid-catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.4rem;
+            margin: 1.2rem 0 1rem;
+        }
+
+        .catalog-card {
+            background: #f4f1ea;
+            padding: 1.2rem 1rem;
+            border-radius: 20px;
+            border: 1px solid #e4ddcd;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .catalog-card:hover {
+            background: #efeade;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+        }
+
+        .catalog-card .label {
+            font-weight: 500;
+            font-size: 1.0rem;
+            color: #2a2824;
+            margin-bottom: 0.4rem;
+            display: block;
+            border-bottom: 1px dotted #c9bfab;
+            padding-bottom: 0.3rem;
+        }
+
+        .catalog-card p {
+            font-size: 0.9rem;
+            color: #4d493f;
+            margin: 0;
+        }
+
+        .intro-text {
+            font-size: 1rem;
+            margin: 0.8rem 0 1.6rem;
+            padding: 0.2rem 0 0.2rem 1.2rem;
+            border-left: 4px solid #d8cfb8;
+            color: #3f3b33;
+        }
+
+        .highlight-box {
+            background: #efeade;
+            border-radius: 18px;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0 1.8rem;
+            border-left: 6px solid #b7a88c;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: "📌 提示栏";
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #7d755f;
+            background: #fcfbf7;
+            padding: 0.1rem 0.6rem;
+            border-radius: 16px;
+            position: absolute;
+            top: -0.6rem;
+            left: 1.2rem;
+        }
+
+        .highlight-box p {
+            margin: 0.6rem 0 0.2rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.8rem 0 1rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2dac8;
+            padding-bottom: 0.7rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #303030;
+            font-size: 0.98rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-a {
+            color: #535048;
+            font-size: 0.92rem;
+            padding-left: 0.8rem;
+        }
+
+        .rel-links {
+            margin: 2rem 0 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: #f4f1ea;
+            padding: 1.4rem 1.8rem;
+            border-radius: 20px;
+        }
+
+        .rel-links .item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .rel-links .item a {
+            color: #4d4737;
+            text-decoration: none;
+            border-bottom: 1px dotted #b3a78c;
+            font-weight: 450;
+        }
+
+        .rel-links .item a:hover {
+            border-bottom-style: solid;
+            color: #24221d;
+        }
+
+        .footnote {
+            font-size: 0.85rem;
+            color: #716b5c;
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #dbd2be;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e5ddcb;
+            padding: 0.1rem 0.6rem;
+            border-radius: 14px;
+            font-size: 0.7rem;
+            color: #3f3b30;
+            margin-right: 0.3rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.6rem; }
+            .page { padding: 1.5rem 1rem 2rem; }
+            h1 { font-size: 1.7rem; }
+            .subhead { flex-direction: column; gap: 0.4rem; }
+            .grid-catalog { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>壹号娱乐 · 资料导览</h1>
+    <div class="subhead">
+        <span>信息索引·生活化记录</span>
+        <span>整理于 2025 · 春季</span>
+    </div>
+
+    <div class="intro-text">
+        平时收集和整理一些与 <a href="https://sites-1haoentertainment.com" style="color:#3f3b33; text-decoration: underline wavy #cfc2a8 0.5px;">壹号娱乐</a> 相关的公开信息、使用心得以及常见疑问。这份页面就像一本随手翻的小手册，把零散的知识点归拢到一起，方便回头查阅。
+    </div>
+
+    <div class="section-title">目录速览</div>
+    <div class="grid-catalog">
+        <div class="catalog-card">
+            <span class="label">📋 基础信息</span>
+            <p>平台背景、服务定位、主要功能模块，适合第一次接触的朋友快速了解轮廓。</p>
+        </div>
+        <div class="catalog-card">
+            <span class="label">🧩 使用场景</span>
+            <p>日常休闲、资料查找、内容整理——几个真实使用片段，供你参考。</p>
+        </div>
+        <div class="catalog-card">
+            <span class="label">🔍 搜索技巧</span>
+            <p>关键词组合、分类筛选、书签管理，让信息获取更顺手。</p>
+        </div>
+        <div class="catalog-card">
+            <span class="label">❓ 常见疑问</span>
+            <p>账户相关、内容更新、访问流畅度等，FAQ 摘要放在下方。</p>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <p>如果你在找和 <strong>壹号娱乐</strong> 相关的资料或使用备忘，这个页面会持续收录实用记录。所有信息都基于公开可查的内容整理，保持客观。</p>
+        <p style="margin-top:0.6rem;">📍 新来的朋友建议先看「目录速览」里的基础信息，再按需要跳转。</p>
+    </div>
+
+    <div class="section-title">信息板块 · 选摘</div>
+    <div style="display: flex; flex-direction: column; gap: 1.2rem; margin: 0.6rem 0 1.4rem;">
+        <div>
+            <div style="font-weight: 450; margin-bottom: 0.2rem;">📎 内容索引方式</div>
+            <p style="color: #4d493f; font-size: 0.95rem;">平时习惯用标签+日期来管理，比如“#壹号娱乐 · 功能 #2025-03”。这样后期按标签查找比较快。如果你也喜欢记笔记，可以试试类似的分类逻辑。</p>
+        </div>
+        <div>
+            <div style="font-weight: 450; margin-bottom: 0.2rem;">📎 相关资源入口</div>
+            <p style="color: #4d493f; font-size: 0.95rem;">关于 <a href="https://sites-1haoentertainment.com" style="color:#3f3b33; text-decoration: underline #cfc2a8 1px;">壹号娱乐</a> 的更多公开说明和使用指南，可以直接从站点主页获取。另外也推荐关注官方的帮助中心（如果有的话），那边的更新通常比较及时。</p>
+        </div>
+        <div>
+            <div style="font-weight: 450; margin-bottom: 0.2rem;">📎 场景举例：日常整理</div>
+            <p style="color: #4d493f; font-size: 0.95rem;">有一次想回溯某类内容，在壹号娱乐里用了“时间+关键词”的组合搜索，配合收藏夹功能，十来分钟就把散落的资料串起来了。习惯之后，这个流程挺顺手的。</p>
+        </div>
+    </div>
+
+    <div class="section-title">常见疑问摘要</div>
+    <div class="faq-mini">
+        <div class="faq-item">
+            <div class="faq-q">Q：内容多久更新一次？</div>
+            <div class="faq-a">平台内容由运营方持续维护，具体更新节奏建议留意官方通知或站点公告。日常使用中，热门分类的刷新会快一些。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：初始使用需要注意什么？</div>
+            <div class="faq-a">基本注册流程走完后，建议先浏览一下帮助页面，熟悉分类和搜索逻辑。如果遇到加载问题，可以检查网络或尝试更换时段。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：有没有推荐的访问方式？</div>
+            <div class="faq-a">通过浏览器直接访问 <a href="https://sites-1haoentertainment.com" style="color:#3f3b33; text-decoration: underline #cfc2a8 1px;">壹号娱乐</a> 即可，移动端和桌面端的体验略有差异，可按习惯选择。</div>
+        </div>
+    </div>
+
+    <div class="section-title">相关信息区</div>
+    <div class="rel-links">
+        <div class="item">🔹 官方主页：<a href="https://sites-1haoentertainment.com">壹号娱乐</a></div>
+        <div class="item">🔹 资料标签：<span class="tag">索引</span><span class="tag">指南</span><span class="tag">日常</span></div>
+        <div class="item">🔹 更新记录：不定期补充</div>
+    </div>
+
+    <div class="footnote">
+        本页为个人整理的资料索引，所引信息仅供参考。实际使用请以 <a href="https://sites-1haoentertainment.com" style="color:#4d4737; text-decoration: none; border-bottom: 1px dotted #b3a78c;">壹号娱乐</a> 官方披露为准。<br>
+        最后修订 · 2025年4月
+    </div>
+</div>
+</body>
+</html>
